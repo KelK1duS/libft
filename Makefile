@@ -1,7 +1,11 @@
-CC=gcc
+CC= gcc
 CFLAGS= -Wall -Werror -Wextra
+LDFLAGS= -L. -lft -lbsd
 
-SRCS= ft_strlen.c ft_isalpha.c ft_isdigit.c ft_alnum.c
+SRCS=	ft_isalpha.c ft_isdigit.c ft_alnum.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c \
+		ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+		ft_strlcpy.c ft_strlcat.c
 OBJ= $(subst .c,.o,$(SRCS))
 
 NAME= libft.a
@@ -25,7 +29,7 @@ fclean: clean
 re: fclean all clean
 
 build: all
-	$(CC) main.c -L. -lft -o $(EXEC)
+	$(CC) main.c -o $(EXEC) $(LDFLAGS)
 
 run: fclean all build
 	./$(EXEC) "H3ll0-W0rld"
