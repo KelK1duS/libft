@@ -1,14 +1,5 @@
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
-{
-	size_t	i;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
 size_t	ft_strnlen(const char *str, size_t max)
 {
 	size_t	i;

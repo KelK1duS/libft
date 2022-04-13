@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 	int	i;
 
 	s = argv[1];
-	strlcpy(s, "Hello", 6);
-	printf("%d : %s\n", ft_strlcat(s, " World", 12), s);
+	printf("%i\n", ft_strncmp("Hello0", "Hello", 50));
 	return (0);
 }
