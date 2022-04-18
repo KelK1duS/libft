@@ -1,10 +1,10 @@
 #include "libft.h"
 
-size_t	ft_strnlen(const char *str, size_t max)
+size_t	ft_strnlen(const char *str, size_t n)
 {
 	size_t	i;
 
-	while (str[i] && i < max)
+	while (str[i] && i < n)
 		i++;
 	return (i);	
 }

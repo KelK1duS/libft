@@ -1,39 +1,45 @@
 #include "libft.h"
 
-#include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <bsd/string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 void	print_is(char *str)
 {
-	while (*str)
+	while (*str++)
 	{
-		if (ft_isascii(*str))
+		if (ft_isascii(*str - 1))
 		{
-			if (ft_isprint(*str))
+			if (ft_isprint(*str - 1))
 			{
-				if (ft_isalnum(*str))
+				if (ft_isalnum(*str - 1))
 				{
-					if (ft_isalpha(*str))
-						printf("%c est alpha\n", *str);
-					else if (ft_isdigit(*str))
-						printf("%c est digit\n", *str);
+					if (ft_isalpha(*str - 1))
+						printf("%c est alpha\n", *str - 1);
+					else if (ft_isdigit(*str - 1))
+						printf("%c est digit\n", *str - 1);
 				}
+				else
+					printf("%c pas alpha ni digit\n", *str - 1);
 			}
+			else
+				printf("%c pas print\n", *str - 1);
 		}
 		else
-			printf("%c ne sais pas\n", *str);
-		str++;
+			printf("%c pas ascii\n", *str - 1);
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	char *s;
+	char	*str;
+	char	*s;
 	int	i;
 
-	s = argv[1];
-	printf("%i\n", ft_strncmp("Hello0", "Hello", 50));
+	str = argv[1];
+	s = ft_strdup(str);
+	printf("%s\n%s\n", str, s);
 	return (0);
 }

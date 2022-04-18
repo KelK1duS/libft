@@ -7,5 +7,5 @@ char *ft_strchr(const char *s, int c)
 		if (*s++ == c)
 			return ((char *)s--);
 	}
-	return (NULL);
+	return ((char *)0);
 }
